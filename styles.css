@@ -23,7 +23,6 @@ body{
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border-bottom: 3px solid #FF847C;
 }
 .cols{
     text-align: center;
@@ -39,7 +38,6 @@ body{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border-bottom: 3px solid #FF847C;
 }
 .remove-btn{
     background-color: inherit;
@@ -47,6 +45,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
+    cursor: pointer;
 }
 .btns{
     height: 20vh;
