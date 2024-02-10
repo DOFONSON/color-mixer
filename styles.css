@@ -15,12 +15,15 @@ body{
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
+    background-color: #2A363B;
 }
 .mixingColor{
     height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+    border-bottom: 3px solid #FF847C;
 }
 .cols{
     text-align: center;
@@ -28,17 +31,38 @@ body{
     height: 40vh;
 }
 .col{
+    position: relative;
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 100%;
     justify-content: center;
     align-items: center;
-    border: 2px solid rosybrown;
+    box-sizing: border-box;
+    border-bottom: 3px solid #FF847C;
+}
+.remove-btn{
+    background-color: inherit;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .btns{
     height: 20vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+.btns__btn{
+    background-color: #FECEA8;
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 10px;
+    color: #2A363B;
+}
+.btns__btn:hover{
+    background-color: #E84A5F;
+    color: #2A363B;
+    transition: 0.3s;
 }
