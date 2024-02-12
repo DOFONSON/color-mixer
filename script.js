@@ -6,6 +6,10 @@ cols[1].style.backgroundColor = 'red'
 cols[2].style.backgroundColor = 'blue'
 
 cols.forEach((element) => {
+    setTextColor(element.querySelector('.color-code'), element.style.backgroundColor)
+    element.querySelector('.color-code').addEventListener('click', (evt) => {
+        navigator.clipboard.writeText(evt.target.textContent)
+    })
     element.querySelector('.remove-btn').addEventListener('click', ()=> checkLength(element))
     element.addEventListener('mouseover', ()=>{
         element.querySelector('.remove-btn').hidden = false
@@ -43,9 +47,13 @@ class ColorBlock {
         button.innerHTML = '<img src="img/close-svgrepo-com.svg" alt="Закрыть" width=30px>';
         button.addEventListener('click', () => checkLength(newBlock));
 
-        const header = document.createElement('h2');
+        const header = document.createElement('h3');
         header.classList.add('color-code');
         header.textContent = color;
+        setTextColor(header, color)
+        header.addEventListener('click', (evt) => {
+            navigator.clipboard.writeText(evt.target.textContent)
+        })
 
         newBlock.style.backgroundColor = this.color;
 
@@ -78,4 +86,8 @@ document.getElementById('rndmBtn').addEventListener('click', function() {
 
 });
 
+function setTextColor(text, color) {
+    const luminance = chroma(color).luminance()
+    text.style.color = luminance > 0.5 ? 'black' : 'white'
+}
 

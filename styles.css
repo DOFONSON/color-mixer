@@ -65,3 +65,15 @@ body{
     color: #2A363B;
     transition: 0.3s;
 }
+.color-code{
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.color-code:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+    transition: 0.3s
+}
+.mixingColor{
+    background-color: white;
+}
