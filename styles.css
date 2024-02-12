@@ -77,3 +77,14 @@ body{
 .mixingColor{
     background-color: white;
 }
+
+#mixingText{
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#mixingText:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+    transition: 0.3s
+}
