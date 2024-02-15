@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/modal.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js" 
     integrity="sha512-zInFF17qBFVvvvFpIfeBzo7Tj7+rQxLeTJDmbxjBz5/zIr89YVbTNelNhdTT+/DCrxoVzBeUPVFJsczKbB7sew==" 
     crossorigin="anonymous" 
@@ -13,7 +14,6 @@
 <body>
     <div class="mixingColor" id="mixingColor">
         <h2 id="mixingText">#FFFFFF</h2>
-        <button hidden="true">Add to the list</button>
     </div>
     <div class="cols" id="cols">
         <div class="col" id="col-1">
@@ -33,6 +33,20 @@
         <button class="btns__btn" id="mixBtn">Color Mix</button>
         <button class="btns__btn" id="addBtn">Add new color</button>
         <button class="btns__btn" id="rndmBtn">Add random color</button>
+    </div>
+    <div class="modal" hidden = true>
+        <div class="modal__overlay">
+            <div class="modal__window">
+                <span class="modal__title">Введите rgb</span>
+                <input type="text" placeholder="r" class="modal__input" required type="number"> <span class="modal__error">You need to use numbers from 0 to 255</span>
+                <input type="text" placeholder="g" class="modal__input" required type="number"> <span class="modal__error">You need to use numbers from 0 to 255</span>
+                <input type="text" placeholder="b" class="modal__input" required type="number"> <span class="modal__error">You need to use numbers from 0 to 255</span>
+                <div class="modal__buttons">
+                    <button class="modal__button" id="modalAddBtn">Add</button>
+                    <button class="modal__button" id="modalCanselBtn">Cansel</button>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

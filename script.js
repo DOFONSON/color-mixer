@@ -5,6 +5,53 @@ cols[0].style.backgroundColor = '#00FF00'
 cols[1].style.backgroundColor = '#FF0000'
 cols[2].style.backgroundColor = '#0000FF'
 
+const modal = document.querySelector('.modal')
+
+document.getElementById('addBtn').addEventListener('click', () => {
+    modal.hidden = false
+})
+
+const modalCansel = document.getElementById('modalCanselBtn')
+const modalAdd = document.getElementById('modalAddBtn')
+const inputs = modal.querySelectorAll('.modal__input')
+modalCansel.addEventListener('click', () => {
+    
+    inputs.forEach((input) => {
+        input.value = ''
+    })
+    modal.hidden = true
+})
+
+
+
+
+modalAdd.addEventListener('click', () => {
+    let array = []
+    inputs.forEach((input) => {
+        if (input.value === '' || isNaN(input.value) || +input.value >= 256 || +input.value < 0) {
+            input.value = ''
+            console.log(input.nextElementSibling);
+            input.nextElementSibling.style.opacity = 1
+            setTimeout(() => input.nextElementSibling.style.opacity = 0, 3000)
+            return
+        }
+        
+        array.push(+input.value)
+    })
+
+    const id = 'col-' + Math.floor(Math.random() * 1000);
+    const newColorBlock = new ColorBlock(rgbToHex(array[0], array[1], array[2]), id);
+    newColorBlock.addBlock(rgbToHex(array[0], array[1], array[2]));
+    cols = document.querySelectorAll('.col');
+    inputs.forEach((input) => {
+        input.value = ''
+    })
+    modal.hidden = true
+})
+
+
+
+
 document.getElementById('mixBtn').addEventListener('click', () => {
     const colors = [...cols].map((element) => {
         return element.style.backgroundColor
@@ -166,6 +213,9 @@ function rgbToHex(r, g, b) {
     const hexR = componentToHex(r);
     const hexG = componentToHex(g);
     const hexB = componentToHex(b);
+
+
+
 
     return "#" + hexR + hexG + hexB;
 }
